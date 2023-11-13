@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -425,16 +425,16 @@
             </div>
             <div class="user_forms-signup">
                 <h2 class="forms_title">Sign Up</h2>
-                <form class="forms_form" action="/register" method="post">
+                <form class="forms_form" th:action="@{/register}" th:object="${user}" method="post">
                     <fieldset class="forms_fieldset">
                         <div class="forms_field">
-                            <input type="text" placeholder="Full Name" class="forms_field-input" required />
+                            <input type="text" placeholder="Full Name" class="forms_field-input" th:field="*{name}" required />
                         </div>
                         <div class="forms_field">
-                            <input type="email" placeholder="Email" class="forms_field-input" required />
+                            <input type="email" placeholder="Email" class="forms_field-input" th:field="*{email}" required />
                         </div>
                         <div class="forms_field">
-                            <input type="password" placeholder="Password" class="forms_field-input" required />
+                            <input type="password" placeholder="Password" class="forms_field-input" th:field="*{password}" required />
                         </div>
                     </fieldset>
                     <div class="forms_buttons">

@@ -12,9 +12,9 @@ public class MyRestController {
     private MyService myService;
 
     @PostMapping("/register")
-    public void register()
+    public void register(User user)
     {
-        System.out.println("I AM REST-CONTROLLER FOR REGISTER");
+        System.out.println("I AM REST-CONTROLLER FOR REGISTER \n"+user);
         myService.register();
     }
 
